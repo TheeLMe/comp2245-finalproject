@@ -6,23 +6,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Hash the password for security
+    // Hash password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare statement
+    // Insert user
     $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
     $stmt->bind_param("ss", $email, $hashedPassword);
 
     if ($stmt->execute()) {
-        $_SESSION['success'] = "Successful registration! You can now log in.";
-        header("Location: login.html");
+        $_SESSION['message'] = "Successful registration! You can now log in.";
+        $_SESSION['msg_class'] = "success";
+        header("Location: register.html"); // redirect back to show message
         exit;
     } else {
         if ($conn->errno === 1062) {
-            echo "Email already exists!";
+            $_SESSION['message'] = "Email already exists!";
         } else {
-            echo "Error: " . $conn->error;
+            $_SESSION['message'] = "Error: " . $conn->error;
         }
+        $_SESSION['msg_class'] = "error";
+        header("Location: register.html");
+        exit;
     }
 
     $stmt->close();

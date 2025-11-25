@@ -1,102 +1,88 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-/* Container */
-.register-container {
-    background-color: #ffffff;
-    padding: 40px 30px;
+
+/*Login page*/
+.login-container {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    padding: 32px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 350px;
+    width: 360px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+    color: #fff;
 }
 
-/* Heading */
-.register-container h2 {
+h2 {
     text-align: center;
-    margin-bottom: 25px;
-    color: #333;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #fff;
 }
 
-/* Form Labels */
-.register-container label {
+label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
-    color: #555;
-}
-
-/* Form Inputs */
-.register-container input[type="email"],
-.register-container input[type="password"] {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    transition: border 0.3s;
-}
-
-.register-container input[type="email"]:focus,
-.register-container input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/* Submit Button */
-.register-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.register-container button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer Links */
-.register-container p {
-    text-align: center;
+    color: #ddd;
     font-size: 14px;
 }
 
-.register-container a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-container a:hover {
-    text-decoration: underline;
-}
-
-/* Success / Error messages */
-.message {
-    text-align: center;
-    margin-bottom: 15px;
-    padding: 10px;
+input[type="email"],
+input[type="password"],
+button {
+    display: block;
+    width: 100%;            
+    box-sizing: border-box;   
+    padding: 12px;
+    margin-bottom: 16px;
     border-radius: 6px;
+    font-size: 14px;
 }
 
-.message.success {
-    background-color: #d4edda;
-    color: #155724;
+input[type="email"],
+input[type="password"] {
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
-.message.error {
-    background-color: #f8d7da;
-    color: #721c24;
+input::placeholder {
+    color: #ccc;
 }
+
+button {
+    background: #2563eb;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 0; /* remove extra gap after button */
+}
+
+button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+
+    .footer {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+/*Add user page*/
+
+/*View list of user page*/
