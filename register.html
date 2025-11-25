@@ -30,10 +30,7 @@
         <!-- MAIN CONTENT -->
         <div class="content">
 
-            <div class="top-row">
-                <h2>New User</h2>
-                <button class="save-btn" form="addUserForm">Save</button>
-            </div>
+            <h2>New User</h2>
 
             <!-- USER FORM -->
             <form id="addUserForm" action="add_user.php" method="POST" class="user-form">
@@ -64,6 +61,11 @@
                         <option value="Member">Member</option>
                         <option value="Admin">Admin</option>
                     </select>
+                </div>
+
+                <!-- Save button at bottom-right -->
+                <div class="form-row">
+                    <button class="save-btn" type="submit">Save</button>
                 </div>
 
             </form>
