@@ -1,0 +1,88 @@
+body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+
+/*Login page*/
+.login-container {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    padding: 32px;
+    border-radius: 12px;
+    width: 360px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ddd;
+    font-size: 14px;
+}
+
+input[type="email"],
+input[type="password"],
+button {
+    display: block;
+    width: 100%;            
+    box-sizing: border-box;   
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input[type="email"],
+input[type="password"] {
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+button {
+    background: #2563eb;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 0; /* remove extra gap after button */
+}
+
+button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+
+    .footer {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+/*Add user page*/
+
+/*View list of user page*/
