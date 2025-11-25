@@ -1,88 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-
-/*Login page*/
-.login-container {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    padding: 32px;
-    border-radius: 12px;
-    width: 360px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
-    color: #fff;
+  background-color: #f5f6fa;
+  color: #333;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 24px;
-    font-size: 24px;
-    color: #fff;
+header {
+  background-color: #1E2836;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #ddd;
-    font-size: 14px;
+main {
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 
-input[type="email"],
-input[type="password"],
-button {
-    display: block;
-    width: 100%;            
-    box-sizing: border-box;   
-    padding: 12px;
-    margin-bottom: 16px;
-    border-radius: 6px;
-    font-size: 14px;
+.sidebar {
+  background-color: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-input[type="email"],
-input[type="password"] {
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+.sidebar a{
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  font-weight: bold;
 }
 
-input::placeholder {
-    color: #ccc;
+#lgnav {
+  border-top: 2px solid #ddd;
 }
 
-button {
-    background: #2563eb;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin-bottom: 0; /* remove extra gap after button */
+.sidebar a:hover {
+  background-color: #f0f0f0;
+  border-radius: 6px;
 }
 
-button:hover {
-    background: #1e40af;
-    transform: translateY(-2px);
+.logo {
+  height: 40px;
 }
 
+#logout{
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
 
-    .footer {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 12px;
-      color: #aaa;
-    }
+#AddUserBtn {
+  background: #6a55f2;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+  float: right;
+}
 
-/*Add user page*/
-
-/*View list of user page*/
+#AddUserBtn:hover {
+  background: #5945d8;
+}
