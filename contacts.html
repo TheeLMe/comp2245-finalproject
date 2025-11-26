@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Contact</title>
-    <link rel="stylesheet" href="styles1.css">
-    <script src="usrscripts.js" defer></script>
+    <link rel="stylesheet" href="assets/CSS/styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="assets/JS/usrscripts.js" defer></script>
 </head>
 <body>
     <header class ="Title">
-        <img src="dolphin.png" alt="Dolphin Logo" class="logo">
+        <img src="assets\Images\dolphin.png" alt="Dolphin Logo" class="logo">
         Dolphin CRM
     </header>
     <main>
         <div class="sidebar">
-            <a href="dashboard.html">Home</a>
-            <a href="register.html">New Contact</a>
-            <a href="users.html">Users</a>
-            <a href="index.html" id="lgnav"><img id = 'logout'src="logout.png" alt="logout door">Logout</a>
+            <a href="dashboard.php"><i class="fas fa-home"></i> Home</a>
+            <a href="contacts.html"><i class="fas fa-user-plus"></i> New Contact</a>
+            <a href="Users.html"><i class="fas fa-users"></i> Users</a>
+            <hr class="sidebar-divider">
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
         <div class="main">
             <h2>New Contact</h2>
