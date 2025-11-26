@@ -54,4 +54,5 @@ VALUES (
 );
 
 -- Grant all privileges to the admin user
+CREATE USER 'AdminUser'@'localhost' IDENTIFIED BY 'password123';
 GRANT ALL PRIVILEGES ON dolphin_crm.* TO 'AdminUser'@'localhost' IDENTIFIED BY 'password123';
