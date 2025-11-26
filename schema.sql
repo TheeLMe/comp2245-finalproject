@@ -49,7 +49,7 @@ VALUES (
     'Admin',
     'User',
     'admin@project2.com',
-    '$2y$10$9kWfRTY6aIpiI5yAx7AnZ.7rwhhtjfiPgk41IrT9jpJ1rssZCvSO6',
+    '$2y$10$vZpxq8.sCk0U46sJQwCEV.EZEELT6Zl4UYlqn/.JKyD3NBZyuYwhi',
     'admin'
 );
 
