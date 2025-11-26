@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'dolphin_crm';
-$username = 'AdminUser';
-$password = 'password123';
+$username = 'root';
+$password = '';
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
