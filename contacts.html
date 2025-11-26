@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Contact</title>
     <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="usrscripts.js" defer></script>
 </head>
 <body>
     <header class ="Title">
-        <img src="dolphin.png" alt="Dolphin Logo" class="logo">
+        <img src="images/dolphin.png" alt="Dolphin Logo" class="logo">
         Dolphin CRM
     </header>
     <main>
         <div class="sidebar">
-            <a href="dashboard.html">Home</a>
-            <a href="register.html">New Contact</a>
-            <a href="users.html">Users</a>
-            <a href="index.html" id="lgnav"><img id = 'logout'src="logout.png" alt="logout door">Logout</a>
+            <a href="dashboard.html"><i class="fas fa-home"></i>Home</a>
+            <a href="register.html"><i class="fas fa-user-plus"></i>New Contact</a>
+            <a href="users.html"><i class="fas fa-users"></i>Users</a>
+            <a href="index.html" id="lgnav"><i class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
         <div class="main">
             <h2>New Contact</h2>
            
-            <form id="registerForm" action="add_user.php" method="POST">
+            <form id="registerForm" action="add_contacts.php" method="POST">
             <div id = 'formGrid'>
 
                 <div>
@@ -82,8 +83,12 @@
                     <br>
                 </div>
 
-                <div id ='assign'>
-                    
+                <div>
+                    <label for="assign">Assigned To</label>
+                    <br>
+                    <select id="assign" name="assign" required>
+                        <option value="" disabled selected>Select a user</option>
+                    </select>
                 </div>
             </div>
 
