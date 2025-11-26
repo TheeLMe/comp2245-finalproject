@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Contact Details</title>
+    <link rel="stylesheet" href="view_contact.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="images/dolphin.png" class="logo" alt="Logo">
+        <h1>Dolphin CRM</h1>
+    </header>
+
+    <main>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="#">Home</a>
+            <a href="#">New Contact</a>
+            <a href="#">Users</a>
+
+            <div id="lgnav">
+                <a href="#">Logout</a>
+            </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <section class="content">
+            <div class="contact-card">
+
+                <h2 class="section-title">Contact Details</h2>
+
+                <!-- CONTACT INFO -->
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Title</span>
+                        <span class="value">Mr.</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Full Name</span>
+                        <span class="value">John Doe</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Email</span>
+                        <span class="value">john@example.com</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Company</span>
+                        <span class="value">Tech Corp</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Telephone</span>
+                        <span class="value">555-1234</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Assigned To</span>
+                        <span class="value">Sarah Johnson</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Created</span>
+                        <span class="value">2024-11-01</span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Last Updated</span>
+                        <span class="value">2024-11-20</span>
+                    </div>
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="btn-row">
+                    <button class="btn assign-btn">Assign to Me</button>
+
+                    <select class="type-select">
+                        <option>Sales Lead</option>
+                        <option>Support</option>
+                        <option>Sales</option>
+                    </select>
+                </div>
+
+                <!-- NOTES -->
+                <div class="notes-section">
+                    <h3 class="section-title">Notes</h3>
+
+                    <!-- Example Notes -->
+                    <div class="note">
+                        <div class="note-meta">By Sarah — 2024-11-20</div>
+                        <div>Called client to follow up on inquiry.</div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note-meta">By Admin — 2024-11-18</div>
+                        <div>Created contact record.</div>
+                    </div>
+
+                    <!-- Add Note -->
+                    <div class="add-note">
+                        <textarea placeholder="Write a new note..."></textarea>
+                        <button class="save-note-btn">Add Note</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
