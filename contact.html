@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Contact Details</title>
+
+    <!-- Your CSS -->
     <link rel="stylesheet" href="assets/CSS/contact_detailsstyles.css">
+
+    <!-- Font Awesome (needed for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
+<header class="Title">
     <img src="assets/Images/dolphin.png" class="logo" alt="Logo">
-    <h1>Dolphin CRM</h1>
+    Dolphin CRM
 </header>
 
 <main>
+    <!-- SIDEBAR -->
     <aside class="sidebar">
-        <a href="dashboard.php">Home</a>
-        <a href="new_contact.php">New Contact</a>
-        <a href="users.php">Users</a>
-
-        <div id="lgnav">
-            <a href="logout.php">Logout</a>
-        </div>
+        <a href="dashboard.php"><i class="fas fa-home"></i> Home</a>
+        <a href="new_contact.php"><i class="fas fa-user-plus"></i> New Contact</a>
+        <a href="Users.html"><i class="fas fa-users"></i> Users</a>
+        <hr class="sidebar-divider">
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </aside>
 
+    <!-- CONTENT -->
     <section class="content">
         <div class="contact-card">
 
             <h2 class="section-title">Contact Details</h2>
 
-            <!-- CONTACT INFO -->
             <div class="info-grid">
                 <div class="info-item">
                     <span class="label">Title</span>
