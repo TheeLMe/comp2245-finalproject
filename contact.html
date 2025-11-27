@@ -9,109 +9,111 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <img src="assets/Images/dolphin.png" class="logo" alt="Logo">
-        <h1>Dolphin CRM</h1>
-    </header>
+<header>
+    <img src="assets/Images/dolphin.png" class="logo" alt="Logo">
+    <h1>Dolphin CRM</h1>
+</header>
 
-    <main>
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <a href="#">Home</a>
-            <a href="#">New Contact</a>
-            <a href="#">Users</a>
+<main>
+    <aside class="sidebar">
+        <a href="dashboard.php">Home</a>
+        <a href="new_contact.php">New Contact</a>
+        <a href="users.php">Users</a>
 
-            <div id="lgnav">
-                <a href="#">Logout</a>
-            </div>
-        </aside>
+        <div id="lgnav">
+            <a href="logout.php">Logout</a>
+        </div>
+    </aside>
 
-        <!-- CONTENT -->
-        <section class="content">
-            <div class="contact-card">
+    <section class="content">
+        <div class="contact-card">
 
-                <h2 class="section-title">Contact Details</h2>
+            <h2 class="section-title">Contact Details</h2>
 
-                <!-- CONTACT INFO -->
-                
-                <div class="info-grid">
-                    <div class="info-item">
-                        <span class="label">Title</span>
-                        <span class="value value-title">Mr.</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Full Name</span>
-                        <span class="value value-name">John Doe</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Email</span>
-                        <span class="value value-email">john@example.com</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Company</span>
-                        <span class="value value-company">Tech Corp</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Telephone</span>
-                        <span class="value value-telephone">555-1234</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Assigned To</span>
-                        <span class="value value-assigned">Sarah Johnson</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Created</span>
-                        <span class="value value-created">2024-11-01</span>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="label">Last Updated</span>
-                        <span class="value value-updated">2024-11-20</span>
-                    </div>
+            <!-- CONTACT INFO -->
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Title</span>
+                    <span class="value"><?= htmlspecialchars($contact['title']) ?></span>
                 </div>
-                <!-- ACTIONS -->
-                <div class="btn-row">
-                    <button class="btn assign-btn">Assign to Me</button>
 
-                    <select class="type-select">
-                        <option>Sales Lead</option>
-                        <option>Support</option>
-                        <option>Sales</option>
+                <div class="info-item">
+                    <span class="label">Full Name</span>
+                    <span class="value">
+                        <?= htmlspecialchars($contact['firstname'] . " " . $contact['lastname']) ?>
+                    </span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Email</span>
+                    <span class="value"><?= htmlspecialchars($contact['email']) ?></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Company</span>
+                    <span class="value"><?= htmlspecialchars($contact['company']) ?></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Telephone</span>
+                    <span class="value"><?= htmlspecialchars($contact['telephone']) ?></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Assigned To</span>
+                    <span class="value"><?= htmlspecialchars($assignedUserName) ?></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Created</span>
+                    <span class="value"><?= htmlspecialchars($contact['created_at']) ?></span>
+                </div>
+
+                <div class="info-item">
+                    <span class="label">Last Updated</span>
+                    <span class="value"><?= htmlspecialchars($contact['updated_at']) ?></span>
+                </div>
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="btn-row">
+                <form method="POST">
+                    <button name="assign" class="btn assign-btn">Assign to Me</button>
+                </form>
+
+                <form method="POST">
+                    <select name="type" class="type-select" onchange="this.form.submit()">
+                        <option value="Sales Lead" <?= $contact["type"]=="Sales Lead" ? "selected" : "" ?>>Sales Lead</option>
+                        <option value="Support" <?= $contact["type"]=="Support" ? "selected" : "" ?>>Support</option>
+                        <option value="Sales" <?= $contact["type"]=="Sales" ? "selected" : "" ?>>Sales</option>
                     </select>
-                </div>
-
-                <!-- NOTES -->
-                <div class="notes-section">
-                    <h3 class="section-title">Notes</h3>
-
-                    <!-- Example Notes -->
-                    <div class="note">
-                        <div class="note-meta">By Sarah — 2024-11-20</div>
-                        <div>Called client to follow up on inquiry.</div>
-                    </div>
-
-                    <div class="note">
-                        <div class="note-meta">By Admin — 2024-11-18</div>
-                        <div>Created contact record.</div>
-                    </div>
-
-                    <!-- Add Note -->
-                    <div class="add-note">
-                        <textarea placeholder="Write a new note..."></textarea>
-                        <button class="save-note-btn">Add Note</button>
-                    </div>
-                </div>
-
+                </form>
             </div>
-        </section>
-    </main>
+
+            <!-- NOTES -->
+            <div class="notes-section">
+                <h3 class="section-title">Notes</h3>
+
+                <?php foreach ($notes as $note): ?>
+                    <div class="note">
+                        <div class="note-meta">
+                            By <?= htmlspecialchars($note["firstname"] . " " . $note["lastname"]) ?>
+                            — <?= htmlspecialchars($note["created_at"]) ?>
+                        </div>
+                        <div><?= htmlspecialchars($note["comment"]) ?></div>
+                    </div>
+                <?php endforeach; ?>
+
+                <!-- ADD NOTE -->
+                <form method="POST" class="add-note">
+                    <textarea name="note" placeholder="Write a new note..."></textarea>
+                    <button class="save-note-btn">Add Note</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
