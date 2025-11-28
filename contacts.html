@@ -21,10 +21,10 @@
             <hr class="sidebar-divider">
             <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
-        <div class="main">
+        <div class="main" id ="contactmainContent">
             <h2>New Contact</h2>
            
-            <form id="registerForm" action="add_user.php" method="POST">
+            <form id="registerForm" action="add_contacts.php" method="POST">
             <div id = 'formGrid'>
 
                 <div>
@@ -76,7 +76,7 @@
                 <div>
                     <label for="type">Type</label>
                     <br>
-                    <select id="type" name='type' required>
+                    <select id="roletype" name='type' required>
                         <option value="" disabled selected>Select contact type</option>
                         <option value="Sales Lead">Sales Lead</option>
                         <option value="Support">Support</option>

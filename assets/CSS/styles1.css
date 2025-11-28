@@ -23,6 +23,7 @@ header {
 main {
   display: grid;
   grid-template-columns: 20% 80%;
+  background-color: #e9eaee;
 }
 
 .main h2{
@@ -105,6 +106,7 @@ main {
 #userList {
   margin-top: 50px;
   align-items: center;
+  margin-left: 10px;
 }
 
 #userList table {
@@ -154,4 +156,13 @@ main {
   border-radius: 4px;
   width: 100%;
   box-sizing: border-box;
+}
+
+#contactmainContent {
+  background-color: #ffffff;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  margin: 50px;
 }
