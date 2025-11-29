@@ -21,22 +21,30 @@ try{
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST['firstname'];
-    $last_name  = $_POST['lastname'];
-    $email      = $_POST['email'];
-    $telephone  = $_POST['telephone'];
-    $company    = $_POST['comp'];
-    $type       = $_POST['type'];
+    $firstname = trim($_POST['firstname']);
+    $lastname  = trim($_POST['lastname']);
+    $email      = trim($_POST['email']);
+    $telephone  = trim($_POST['telephone']);
+    $company    = trim($_POST['comp']);
+    $type       = trim($_POST['type']);
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Invalid email format");
+    }
+
+    $firstname = htmlspecialchars($firstname);
+    $lastname  = htmlspecialchars($lastname);
+    $company    = htmlspecialchars($company);
+    $telephone = preg_replace('/\D/', '', $telephone);
     try {
         $stmt = $pdo->prepare("
             INSERT INTO contacts (firstname, lastname, email, telephone, company, type)
             VALUES (?, ?, ?, ?, ?, ?)
         ");
 
-        $stmt->execute([$first_name, $last_name, $email, $telephone, $company, $type]);
+        $stmt->execute([$firstname, $lastname, $email, $telephone, $company, $type]);
 
-        header("Location: contacts.html");
+        header("Location: contact.html");
         exit;
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
