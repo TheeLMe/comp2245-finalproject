@@ -1,35 +1,52 @@
 <?php
 session_start();
-require_once 'config.php'; 
+require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
 
-    // Hash password
+    $firstname = $_POST['firstname'];
+    $lastname  = $_POST['lastname'];
+    $email     = $_POST['email'];
+    $password  = $_POST['password'];
+    $role      = $_POST['role'];
+
+    // hash password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert user
-    $stmt = $conn->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
-    $stmt->bind_param("ss", $email, $hashedPassword);
+    try {
 
-    if ($stmt->execute()) {
-        $_SESSION['message'] = "Successful registration! You can now log in.";
+        $sql = "
+            INSERT INTO users (firstname, lastname, email, password, role, created_at)
+            VALUES (:firstname, :lastname, :email, :password, :role, NOW())
+        ";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            ':firstname' => $firstname,
+            ':lastname'  => $lastname,
+            ':email'     => $email,
+            ':password'  => $hashedPassword,
+            ':role'      => $role
+        ]);
+
+        $_SESSION['message'] = "User created successfully!";
         $_SESSION['msg_class'] = "success";
-        header("Location: register.html"); // redirect back to show message
+
+        header("Location: Users.html");
         exit;
-    } else {
-        if ($conn->errno === 1062) {
+
+    } catch (PDOException $e) {
+
+        if ($e->errorInfo[1] == 1062) {
             $_SESSION['message'] = "Email already exists!";
         } else {
-            $_SESSION['message'] = "Error: " . $conn->error;
+            $_SESSION['message'] = "Database error: " . $e->getMessage();
         }
+
         $_SESSION['msg_class'] = "error";
-        header("Location: register.html");
+        header("Location: Users.html");
         exit;
     }
-
-    $stmt->close();
-    $conn->close();
 }
 ?>
