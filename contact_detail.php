@@ -2,10 +2,8 @@
 session_start();
 require_once "config.php";
 
-// Get contact ID
 $id = $_GET["id"] ?? null;
 
-// Fetch contact
 $stmt = $pdo->prepare("SELECT * FROM contacts WHERE id = ?");
 $stmt->execute([$id]);
 $contact = $stmt->fetch(PDO::FETCH_ASSOC);
