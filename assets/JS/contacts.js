@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const titleElement = document.getElementById("title");
-    const assign = document.getElementById('assign');
+    const assign = document.getElementById('assigned_to_div');
     const saveBtn = document.getElementById('SaveBtn');
     const firstname = document.getElementById('firstname');
     const lastname = document.getElementById('lastname');
@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const telephone = document.getElementById('telephone');
     const company = document.getElementById('comp');
     const jobtitle = document.getElementById('roletype');
+
+    // set the options for assigned_to select
+    fetch('add_contacts.php?action=list')
+        .then(response => response.text())
+        .then(data => {
+            assign.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error fetching assigned to options:', error);
+    })
 
     saveBtn.addEventListener('click', () => {
         const data = {
