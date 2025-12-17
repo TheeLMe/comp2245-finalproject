@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     saveBtn.addEventListener('click', () => {
         const data = {
+            title: titleElement.value,
             firstname: firstname.value,
             lastname: lastname.value,
             email: email.value,
