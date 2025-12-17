@@ -26,8 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ");
 
         $stmt->execute([$title, $firstname, $lastname, $email, $telephone, $company, $type, $assignedTo]);
-        echo "<script>alert('New contact added successfully');</script>";
-        header("Location: contact.html");
+        echo "<script>alert('New contact added successfully');
+            window.location.href = 'contact.html';
+        </script>";
         exit;
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
