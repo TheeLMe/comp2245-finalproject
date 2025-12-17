@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jobtitle = document.getElementById('roletype');
 
     // set the options for assigned_to select
-    fetch('add_contacts.php?action=list')
+    fetch('get_users.php?action=list')
         .then(response => response.text())
         .then(data => {
             assign.innerHTML = data;
