@@ -6,141 +6,160 @@
   font-family: Arial, sans-serif;
 }
 
-/* Body */
-body {
-  background-color: #d1d5db;
+/* Page */
+body.contact-page {
+  background-color: #e5e7eb;
   color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
-header {
+.top-header {
+  height: 60px;
   background-color: #0f172a;
-  color: white;
-  padding: 15px 20px;
   display: flex;
-  gap: 20px;
   align-items: center;
+  padding: 0 20px;
+  color: white;
 }
-
-.logo {
-  height: 40px;
-}
+.top-header .logo { height: 40px; margin-right: 12px; }
+.top-header h1 { font-size: 20px; }
 
 /* Layout */
-main {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  height: calc(100vh - 60px);
-}
-
-/* Sidebar */
+.contact-wrapper { display: flex; height: calc(100vh - 60px); }
 .sidebar {
-  background-color: #fff;
+  width: 200px;
+  background-color: white;
   padding: 20px;
-  border-right: 1px solid #ddd;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
-
-.sidebar a {
+.sidebar nav a {
+  display: block;
+  color: black;
   text-decoration: none;
-  color: #333;
-  padding: 10px;
-  font-weight: bold;
-}
-
-.sidebar a:hover {
-  background-color: #f0f0f0;
-  border-radius: 6px;
-}
-
-#lgnav {
-  border-top: 1px solid #ccc;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-/* Content */
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
-}
-
-/* Contact Card */
-.contact-card {
-  background: #fff;
-  width: 700px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.section-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1E2836;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.label {
+  margin-bottom: 16px;
   font-weight: bold;
   font-size: 14px;
 }
-
-.value {
-  font-size: 15px;
-}
-
-/* Buttons */
-.btn-row {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 10px 18px;
-  border-radius: 6px;
+.sidebar nav a i { margin-right: 8px; }
+.sidebar nav a:hover { text-decoration: underline; }
+.sidebar-divider {
+  background-color: rgba(218,218,218,0.445);
+  margin: 12px 0;
+  height: 1px;
   border: none;
+}
+
+.contact-content {
+  flex-grow: 1;
+  padding: 32px;
+  background-color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Unified card with rows */
+.contact-full {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 900px;
+}
+
+.contact-full .row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Row 1: header + actions + meta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.card-header .title h2 {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-header .title h2 i { color: #2563eb; }
+.meta {
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 85px;
+}
+/* Large round avatar icon */
+.contact-avatar {
+  font-size: 60px;        /* make it big */
+  color: grey;         /* blue to match theme */
+  margin-right: 16px;     /* spacing before name */
+  vertical-align: middle; /* align nicely with text */
+}
+
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
+.btn:hover { transform: translateY(-1px); }
+.btn-assign { background-color: #22c55e; color: #fff; }
+.btn-assign:hover { background-color: #16a34a; }
+.btn-switch { background-color: #facc15; color: #333; }
+.btn-switch:hover { background-color: #eab308; }
 
-.assign-btn {
-  background: #2563eb;
-  color: white;
+/* Row 2: info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
 }
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.info-item i { color: #2563eb; }
+.info-item strong { min-width: 110px; }
 
-.assign-btn:hover {
-  background: #1e40af;
+/* Row 3: notes */
+.notes-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #1E2836;
+  font-size: 18px;
 }
-
-.type-select {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* Notes */
-.notes-section {
-  margin-top: 20px;
-}
+.notes-header i { color: #2563eb; }
 
 .note {
   background: #f8f8f8;
@@ -149,22 +168,34 @@ main {
   margin-bottom: 10px;
   border-radius: 6px;
 }
-
+.note-author { font-weight: bold; font-size: 14px; margin-bottom: 4px; }
+.note-content { font-size: 14px; margin-bottom: 6px; }
 .note-meta {
   font-size: 12px;
   color: #555;
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
+/* Add note form */
+.add-note h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  margin: 10px 0 8px;
+}
 .add-note textarea {
   width: 100%;
-  height: 80px;
+  height: 90px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
   resize: vertical;
+  background: #fff;
+  font-size: 14px;
 }
-
 .save-note-btn {
   margin-top: 10px;
   background: #2563eb;
@@ -174,8 +205,15 @@ main {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
-
-.save-note-btn:hover {
-  background: #1e40af;
+.save-note-btn:hover { background: #1e40af; transform: translateY(-1px); }
+/* Section dividers inside card */
+.section-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 16px 0; /* space below line */
 }
