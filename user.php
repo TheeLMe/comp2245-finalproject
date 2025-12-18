@@ -9,7 +9,7 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $statement = $conn -> query("SELECT * FROM users WHERE id = $_SESSION['user_id']");
+    $statement = $conn -> query("SELECT * FROM users WHERE id =" . $_SESSION['user_id']);
     $currentUser = $statement -> fetch(PDO::FETCH_ASSOC);
     $stmt = $conn->query("SELECT * FROM users");
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
