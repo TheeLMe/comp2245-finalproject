@@ -11,4 +11,8 @@ try {
     die("DB Connection failed: " . $e->getMessage());
 }
 
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
