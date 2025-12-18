@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company    = trim($_POST['comp']);
     $type       = trim($_POST['type']);
     $assignedTo = trim($_POST['assigned_to']);
+    $createdBy = $_SESSION['user_id'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Invalid email format");
@@ -21,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telephone = preg_replace('/\D/', '', $telephone);
     try {
         $stmt = $pdo->prepare("
-            INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
 
-        $stmt->execute([$title, $firstname, $lastname, $email, $telephone, $company, $type, $assignedTo]);
+        $stmt->execute([$title, $firstname, $lastname, $email, $telephone, $company, $type, $assignedTo, $createdBy]);
         echo "<script>alert('New contact added successfully');
             window.location.href = 'contact.html';
         </script>";
