@@ -107,7 +107,7 @@ body.contact-page {
 /* Large round avatar icon */
 .contact-avatar {
   font-size: 60px;        /* make it big */
-  color: grey;         /* blue to match theme */
+  color: grey;         
   margin-right: 16px;     /* spacing before name */
   vertical-align: middle; /* align nicely with text */
 }
