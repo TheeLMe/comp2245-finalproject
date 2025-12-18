@@ -50,7 +50,7 @@ VALUES (
     'User',
     'admin@project2.com',
     '$2y$10$vZpxq8.sCk0U46sJQwCEV.EZEELT6Zl4UYlqn/.JKyD3NBZyuYwhi',
-    'admin'
+    'Admin'
 );
 
 -- Grant all privileges to the admin user
