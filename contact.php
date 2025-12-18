@@ -66,8 +66,8 @@ $currentUserId = $_SESSION['user_id'] ?? null;
     <aside class="sidebar">
       <nav>
         <a href="dashboard.php"><i class="fas fa-home"></i> Home</a>
-        <a href="contacts.php"><i class="fas fa-user-plus"></i> New Contact</a>
-        <a href="users.php"><i class="fas fa-users"></i> Users</a>
+        <a href="contacts.html"><i class="fas fa-user-plus"></i> New Contact</a>
+        <a href="Users.html"><i class="fas fa-users"></i> Users</a>
         <hr class="sidebar-divider">
         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </nav>
