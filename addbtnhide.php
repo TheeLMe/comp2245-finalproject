@@ -5,7 +5,7 @@ require_once 'config.php';
 
 try {
 
-    $statement = $conn -> query("SELECT * FROM users WHERE id =" . $_SESSION['user_id']);
+    $statement = $pdo -> query("SELECT * FROM users WHERE id =" . $_SESSION['user_id']);
     $currentUser = $statement -> fetch(PDO::FETCH_ASSOC);
 
     if ($currentUser['role'] == 'Admin') {

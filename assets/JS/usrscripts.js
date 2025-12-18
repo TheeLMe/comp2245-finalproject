@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addbtn = document.getElementById("addbtn");
 
   let url = `user.php?action=list`;
-  let url1 = 'addbtnhide.php';
+  let url1 = 'addbtnhide.php?action=list';
 
   fetch(url1)
     .then(response => response.text())
