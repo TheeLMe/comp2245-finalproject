@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company    = trim($_POST['comp']);
     $type       = trim($_POST['type']);
     $assignedTo = trim($_POST['assigned_to']);
-    $createdBy = $_SESSION['user_id'];
+    $createdBy = $_POST[$_SESSION['user_id']];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         die("Invalid email format");
