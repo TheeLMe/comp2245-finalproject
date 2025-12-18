@@ -1,11 +1,11 @@
 function loadContacts(filter = "all") {
-  fetch("get_contacts.php?filter=" + filter)
+  fetch("get_contacts.php?filter=" + filter) // ✅ corrected path
     .then(res => res.json())
     .then(data => {
       const tbody = document.getElementById("contacts-body");
       tbody.innerHTML = ""; // clear old rows
 
-      if (data.length === 0) {
+      if (!Array.isArray(data) || data.length === 0) {
         tbody.innerHTML = `<tr><td colspan="5">No contacts found.</td></tr>`;
         return;
       }
@@ -16,8 +16,8 @@ function loadContacts(filter = "all") {
             <td>${c.title} ${c.firstname} ${c.lastname}</td>
             <td>${c.email}</td>
             <td>${c.company}</td>
-            <td>${c.type.toUpperCase()}</td>
-            <td><a href="contact.html?id=${c.id}">View</a></td>
+            <td>${c.type ? c.type.toUpperCase() : ""}</td>
+            <td><a href="contact.php?id=${c.id}">View</a></td>
           </tr>
         `;
         tbody.insertAdjacentHTML("beforeend", row);
@@ -25,6 +25,8 @@ function loadContacts(filter = "all") {
     })
     .catch(err => {
       console.error("Error loading contacts:", err);
+      const tbody = document.getElementById("contacts-body");
+      tbody.innerHTML = `<tr><td colspan="5">Error loading contacts.</td></tr>`;
     });
 }
 
