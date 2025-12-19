@@ -100,6 +100,7 @@ main {
   transition: 0.2s;
   float: right;
   margin-right: 20px;
+
 }
 
 /* User List table style*/
@@ -128,41 +129,84 @@ main {
   color: white;
 }
 
+#contactmainContent {
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  margin: 40px auto;
+  padding: 30px 40px 50px;
+  width: 85%;
+}
+
+/* Heading */
+#contactmainContent h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Grid layout */
 #formGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 4;
-  grid-gap: 20px;
-  height: auto;
-  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 25px;
 }
 
-#formGrid div {
-  margin: 10px 20px;
+/* Each form group */
+#formGrid > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
 }
 
+/* Labels */
 #formGrid label {
-  margin-bottom: 8px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
-#formGrid input, #formGrid select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Inputs & selects */
+#formGrid input,
+#formGrid select {
   width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
-#contactmainContent {
-  background-color: #ffffff;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ddd;
-  margin: 50px;
+/* Title field slightly narrower (like screenshot) */
+#titlediv {
+  width: 60%;
+}
+
+/* Assigned To placeholder aligns left column */
+#assigned_to_div {
+  grid-column: 1 / 2;
+}
+
+/* Save button container */
+#idk {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+/* Save button */
+#SaveBtn {
+  background-color: #6c63ff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#SaveBtn:hover {
+  background-color: #5a52e0;
 }

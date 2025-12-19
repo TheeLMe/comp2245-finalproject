@@ -27,8 +27,9 @@
             <form id="registerForm" action="add_contacts.php" method="POST">
             <div id = 'formGrid'>
 
-                <div>
+                <div id="titlediv">
                     <label for ='title'>Title</label>
+                    <br>
                     <select id="title" name='title' required>
                         <option value="" disabled selected>Select your title</option>
                         <option value="Mr.">Mr.</option>
@@ -37,6 +38,8 @@
                     </select>
                 <br>
                 </div>
+
+                <br>
 
                 <div>
                     <label for="firstname">First Name</label>
@@ -87,8 +90,9 @@
                 <div id = 'assigned_to_div'>
                 </div>
             </div>
-
-            <button id='SaveBtn' type="submit">Save</button>
+            <div id="idk">
+                <button id='SaveBtn' type="submit">Save</button>
+            </div>
         </form>
         </div>
         
