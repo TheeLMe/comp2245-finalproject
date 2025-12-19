@@ -1,7 +1,7 @@
 /*LOGIN BODY */
 body.login-page {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #b7c6f3, #7198f3);
+  background: linear-gradient(135deg, #b7c6f3, #c0cff1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,27 +11,21 @@ body.login-page {
 
 /*Login page container*/
 .login-container {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  padding: 32px;
+  background: rgba(255,255,255,0.95); 
+  backdrop-filter: blur(8px);       
+  -webkit-backdrop-filter: blur(8px);
+  padding: 40px;
   border-radius: 12px;
-  width: 360px;
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
-  color: black;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  width: 320px;
 }
+
 .login-header {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
   gap: 12px;
-}
-
-.login-logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
 }
 
 .login-header h2 {
@@ -190,6 +184,7 @@ body.dashboard-page {
 
 .filters a:hover {
   text-decoration: underline;
+  color:#1e3a8a; 
 }
 
 .add-contact-btn {
@@ -208,6 +203,9 @@ body.dashboard-page {
   border-collapse: collapse;
 }
 
+.contacts-table thead{
+  background-color: rgb(177, 177, 177);
+}
 .contacts-table th,
 .contacts-table td {
   border: 1px solid #ccc;
@@ -215,7 +213,32 @@ body.dashboard-page {
   text-align: left;
   font-size: 14px;
 }
+.type-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 15%;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
 
-.contacts-table th {
-  background-color: #eee;
+.type-sales {
+  background-color: #facc15; /* yellow */
+  color: black;
+}
+
+.type-support {
+  background-color: #2563eb; /* blue */
+}
+
+.contacts-table a {
+  text-decoration: none;   /* removes underline */
+  color: #2563eb;          /* keep a nice blue or change to your brand color */
+  font-weight: bold;
+}
+
+.contacts-table a:hover {
+  text-decoration: none;   /* no underline on hover */
+  color: #1e40af;          /* darker shade on hover */
 }

@@ -11,9 +11,9 @@ $sql = "SELECT id, title, firstname, lastname, email, company, type FROM contact
 $params = [];
 
 if ($filter === "sales") {
-    $sql .= " WHERE type = 'sales'";
+    $sql .= " WHERE type = 'Sales Lead'";
 } elseif ($filter === "support") {
-    $sql .= " WHERE type = 'support'";
+    $sql .= " WHERE type = 'Support'";
 } elseif ($filter === "mine" && $userId) {
     $sql .= " WHERE assigned_to = :uid";
     $params["uid"] = $userId;
