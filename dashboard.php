@@ -49,7 +49,7 @@ if (!isset($_SESSION["user_id"])) {
       <table class="contacts-table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th class = "contact-link">Name</th>
             <th>Email</th>
             <th>Company</th>
             <th>Type</th>
