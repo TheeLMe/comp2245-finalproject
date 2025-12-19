@@ -95,7 +95,7 @@ body.contact-page {
   align-items: center;
   gap: 8px;
 }
-.card-header .title h2 i { color: #2563eb; }
+.card-header .title h2 i { color: grey; }
 .meta {
   font-size: 13px;
   color: #555;
@@ -106,10 +106,9 @@ body.contact-page {
 }
 /* Large round avatar icon */
 .contact-avatar {
-  font-size: 60px;        /* make it big */
-  color: grey;         
-  margin-right: 16px;     /* spacing before name */
-  vertical-align: middle; /* align nicely with text */
+  font-size: 60px;     
+  margin-right: 16px;  
+  vertical-align: middle;
 }
 
 
@@ -130,25 +129,35 @@ body.contact-page {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-assign { background-color: #22c55e; color: #fff; }
+.btn-assign { background-color: #22c55e; color: #333; }
 .btn-assign:hover { background-color: #16a34a; }
 .btn-switch { background-color: #facc15; color: #333; }
 .btn-switch:hover { background-color: #eab308; }
 
-/* Row 2: info grid */
+/* Two-column stacked info grid */
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 24px;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px 40px; 
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+
+.info-block label {
+  display: block;
+  font-weight: bold;
   font-size: 14px;
+  color: #1E2836;
+  margin-bottom: 4px;
 }
-.info-item i { color: #2563eb; }
-.info-item strong { min-width: 110px; }
+
+.info-block div {
+  font-size: 14px;
+  color: #333;
+}
+
 
 /* Row 3: notes */
 .notes-header {
@@ -159,11 +168,11 @@ body.contact-page {
   color: #1E2836;
   font-size: 18px;
 }
-.notes-header i { color: #2563eb; }
+.notes-header i { color: black; }
 
 .note {
   background: #f8f8f8;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid grey;
   padding: 12px;
   margin-bottom: 10px;
   border-radius: 6px;
@@ -179,25 +188,37 @@ body.contact-page {
 }
 
 /* Add note form */
+.add-note {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end; 
+}
+
 .add-note h4 {
+  align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 15px;
-  margin: 10px 0 8px;
+  margin: 0;
+  color:black;
 }
+
 .add-note textarea {
   width: 100%;
-  height: 90px;
-  padding: 10px;
+  min-height: 100px;
+  padding: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
   resize: vertical;
   background: #fff;
   font-size: 14px;
+  line-height: 1.4;
+  align-self: stretch;
 }
+
 .save-note-btn {
-  margin-top: 10px;
   background: #2563eb;
   color: white;
   padding: 10px 16px;
@@ -210,10 +231,15 @@ body.contact-page {
   align-items: center;
   gap: 6px;
 }
-.save-note-btn:hover { background: #1e40af; transform: translateY(-1px); }
+
+.save-note-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
 /* Section dividers inside card */
 .section-divider {
   border: none;
   border-top: 1px solid #ddd;
-  margin: 0 0 16px 0; /* space below line */
+  margin: 0 0 16px 0; 
 }
