@@ -23,7 +23,7 @@ Final Assignment for Group B - Melissa Knight, Trevern Lamontagne, and Aidan Fra
 | add_note.php             | Add note to contact (inserts note into DB)       |
 | config.php               | Database connection (PDO setup, session start)   |
 | assets/css/styles.css    | General styles                                   |
-| assets/css/styles1.css   | Alternate/general styles                         |
+| assets/css/styles1.css   | other styles                         |
 | assets/css/registerstyles.css | Styles for registration page                |
 | assets/css/contact_detailsstyles.css | Styles for contact details page      |
 | assets/js/dashboard.js   | Dashboard interactivity (fetch/display contacts) |
