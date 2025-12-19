@@ -242,3 +242,14 @@ body.dashboard-page {
   text-decoration: none;   /* no underline on hover */
   color: #1e40af;          /* darker shade on hover */
 }
+
+.contacts-table .contact-link {
+  text-decoration: none;
+  color: black; 
+  font-weight: normal;
+}
+
+.contacts-table .contact-link:hover {
+  text-decoration: none;           
+}
+
