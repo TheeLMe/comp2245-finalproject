@@ -102,7 +102,7 @@ $currentUserId = $_SESSION['user_id'] ?? null;
               <form action="assign_contact.php" method="POST">
                 <input type="hidden" name="contact_id" value="<?= $contact['id'] ?>">
                 <input type="hidden" name="assigned_to" value="<?= htmlspecialchars($currentUserId) ?>">
-                <button type="submit" class="btn btn-assign"><i class="fa-solid fa-user-check"></i> Assign to me</button>
+                <button type="submit" class="btn btn-assign"><i class="fa-solid fa-hand"></i>Assign to me</button>
               </form>
 
               <!-- Switch type -->
@@ -116,20 +116,32 @@ $currentUserId = $_SESSION['user_id'] ?? null;
         </div>
 
         <!-- Row 2: Info grid -->
-        <div class="row">
+       <div class="row">
           <hr class="section-divider">
           <div class="info-grid">
-            <div class="info-item"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <?= htmlspecialchars($contact["email"]) ?></div>
-            <div class="info-item"><i class="fa-solid fa-phone"></i> <strong>Telephone:</strong> <?= htmlspecialchars($contact["telephone"] ?? "N/A") ?></div>
-            <div class="info-item"><i class="fa-solid fa-building"></i> <strong>Company:</strong> <?= htmlspecialchars($contact["company"]) ?></div>
-            <div class="info-item"><i class="fa-solid fa-user-tag"></i> <strong>Assigned To:</strong> <?= htmlspecialchars($contact["assigned_first"] . " " . $contact["assigned_last"]) ?></div>
+            <div class="info-block">
+              <label>Email</label>
+              <div><?= htmlspecialchars($contact["email"]) ?></div>
+            </div>
+            <div class="info-block">
+              <label>Telephone</label>
+              <div><?= htmlspecialchars($contact["telephone"] ?? "N/A") ?></div>
+            </div>
+            <div class="info-block">
+              <label>Company</label>
+              <div><?= htmlspecialchars($contact["company"]) ?></div>
+            </div>
+            <div class="info-block">
+              <label>Assigned To</label>
+              <div><?= htmlspecialchars($contact["assigned_first"] . " " . $contact["assigned_last"]) ?></div>
+            </div>
           </div>
         </div>
 
         <!-- Row 3: Notes -->
         <div class="row">
           <hr class="section-divider">
-          <div class="notes-header"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+          <div class="notes-header"><i class="fa-solid fa-pen-to-square"></i> Notes</div>
 
           <?php if (count($notes) === 0): ?>
             <p>No notes yet.</p>
@@ -138,16 +150,16 @@ $currentUserId = $_SESSION['user_id'] ?? null;
               <div class="note">
                 <div class="note-author"><?= htmlspecialchars($note["firstname"] . " " . $note["lastname"]) ?></div>
                 <div class="note-content"><?= nl2br(htmlspecialchars($note["comment"])) ?></div>
-                <div class="note-meta"><i class="fa-solid fa-clock"></i> <?= date("F j, Y \a\\t g:ia", strtotime($note["created_at"])) ?></div>
+                <div class="note-meta"> <?= date("F j, Y \a\\t g:ia", strtotime($note["created_at"])) ?></div>
               </div>
             <?php endforeach; ?>
           <?php endif; ?>
 
           <form action="add_note.php" method="POST" class="add-note">
-            <h4><i class="fa-solid fa-pen"></i> Add a note about <?= htmlspecialchars($contact["firstname"] . " " . $contact["lastname"]) ?>:</h4>
+            <h4>Add a note about <?= htmlspecialchars($contact["firstname"] . " " . $contact["lastname"]) ?>:</h4>
             <textarea name="comment" placeholder="Enter details here..." required></textarea>
             <input type="hidden" name="contact_id" value="<?= $contact["id"] ?>">
-            <button type="submit" class="save-note-btn"><i class="fa-solid fa-save"></i> Save Note</button>
+            <button type="submit" class="save-note-btn"> Add Note</button>
           </form>
         </div>
 
