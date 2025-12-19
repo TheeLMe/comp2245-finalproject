@@ -1,5 +1,5 @@
 function loadContacts(filter = "all") {
-  fetch("get_contacts.php?filter=" + filter) // ✅ corrected path
+  fetch("get_contacts.php?filter=" + filter)
     .then(res => res.json())
     .then(data => {
       const tbody = document.getElementById("contacts-body");
@@ -11,13 +11,25 @@ function loadContacts(filter = "all") {
       }
 
       data.forEach(c => {
+        // Determine badge class based on type
+        let badgeClass = "";
+        if (c.type && c.type.toLowerCase().includes("sales")) {
+          badgeClass = "type-sales";
+        } else if (c.type && c.type.toLowerCase().includes("support")) {
+          badgeClass = "type-support";
+        }
+
         const row = `
           <tr>
             <td>${c.title} ${c.firstname} ${c.lastname}</td>
             <td>${c.email}</td>
             <td>${c.company}</td>
-            <td>${c.type ? c.type.toUpperCase() : ""}</td>
-            <td><a href="contact.php?id=${c.id}">View</a></td>
+            <td>
+              <span class="type-badge ${badgeClass}">
+                ${c.type ? c.type.toUpperCase() : ""}
+              </span>
+            </td>
+            <td><a class="btn btn-view" href="contact.php?id=${c.id}">View</a></td>
           </tr>
         `;
         tbody.insertAdjacentHTML("beforeend", row);
