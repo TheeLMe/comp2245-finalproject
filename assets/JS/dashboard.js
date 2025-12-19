@@ -21,7 +21,11 @@ function loadContacts(filter = "all") {
 
         const row = `
           <tr>
-            <td>${c.title} ${c.firstname} ${c.lastname}</td>
+            <td>
+              <a class="contact-link" href="contact.php?id=${c.id}">
+                ${c.title} ${c.firstname} ${c.lastname}
+              </a>
+            </td>
             <td>${c.email}</td>
             <td>${c.company}</td>
             <td>
